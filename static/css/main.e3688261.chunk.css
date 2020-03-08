@@ -1,0 +1,2 @@
+.url-row{display:grid;grid-template-columns:repeat(3,1fr);word-wrap:break-word;width:900px;grid-gap:30px;gap:30px}.url-row *{width:300px}.home{padding:15px}.url-table{overflow:auto}.url-table__head{border-bottom:1px solid grey}.url-body{padding:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;background:#f1f1f1}
+/*# sourceMappingURL=main.e3688261.chunk.css.map */
