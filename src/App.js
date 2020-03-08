@@ -8,7 +8,7 @@ const Redirect = props => {
   const [render, setRender] = useState(false)
   
   const getRedirect = async short => {
-    const response = await fetch("http://localhost:5000/get/"+short)
+    const response = await fetch("https://shortme-backend.herokuapp.com/get/"+short)
     const data = await response.json()
     window.location = data
   }
@@ -31,7 +31,7 @@ const Redirect = props => {
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="https://gypsydangerous.github.io/">
         <Route exact path="/" component={Home}/>
         <Route path="/:shortened" component={Redirect}/>
       </Router>
