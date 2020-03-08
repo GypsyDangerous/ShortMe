@@ -21,8 +21,7 @@ const Home = () => {
     }
 
     const getUrls = async () => {
-        console.log(process.env)
-        const response = await fetch(process.env.REACT_APP_API_LINK+"/api/get")
+        const response = await fetch("http://localhost:5000/api/get")
         const data = await response.json()
         setAllUrls(data)
     }
