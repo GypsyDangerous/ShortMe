@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import Home from "./components/Home"
+
+const Redirect = props => {
+
+  const [render, setRender] = useState(false)
+  
+  const getRedirect = async short => {
+    const response = await fetch("http://localhost:5000/get/"+short)
+    const data = await response.json()
+    window.location = data
+  }
+
+  useEffect(() => {
+    const {shortened} = props.match.params
+    getRedirect(shortened)
+    setTimeout(() => props.history.push("/"), 1000)
+  })
+
+
+  return (
+    <>
+    {render && <h1>Invalid Shortened Url</h1>}
+    </>
+  )
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Route exact path="/" component={Home}/>
+        <Route path="/:shortened" component={Redirect}/>
+      </Router>
     </div>
   );
 }
