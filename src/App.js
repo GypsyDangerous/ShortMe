@@ -31,7 +31,7 @@ const Redirect = props => {
 function App() {
   return (
     <div className="App">
-      <Router basename="https://gypsydangerous.github.io/">
+      <Router basename="https://gypsydangerous.github.io/short-me">
         <Route exact path="/" component={Home}/>
         <Route path="/:shortened" component={Redirect}/>
       </Router>
