@@ -47,7 +47,7 @@ const Home = () => {
                     {allUrls.map(url => (
                         <div className="url-row">
                             <a target="_blank" href={url.full}>{url.full}</a>
-                            <a target="_blank" href={`/${url.shortened}`}>{url.shortened}</a>
+                            <a target="_blank" href={`/short-me/${url.shortened}`}>{url.shortened}</a>
                             <span>{url.clicks}</span>
                         </div>
                     ))}
