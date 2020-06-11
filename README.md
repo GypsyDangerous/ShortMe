@@ -1,1 +1,1 @@
-# React frontend for a url shortener
+# Short Me
